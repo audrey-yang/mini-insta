@@ -1,0 +1,26 @@
+{% extends './posts-display-base.html' %}
+
+{% if user.is_authenticated %}
+    {% block title%}
+    <title>Mini-Instagram | My Posts</title>
+    {% endblock%}
+    {% block content%}
+        <h1>My Posts</h1>
+        <h3 class="instr">Click on a post to delete. </h3>
+        {% if posts %}
+            <ul class="posts">
+            {% for post in posts %}
+                <li>
+                    <a href="./my-posts/delete/{{post.id}}"><h3>{{ post.text }}</h3></a>
+                    <p class="date">Likes: {{ post.numLikes }}</p>
+                    <p class="date">{{ post.pub_date }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No posts are available.</p>
+        {% endif %}
+    {% endblock %}
+{% else %}
+    <meta http-equiv="REFRESH" content="0;url=./login">
+{% endif %} 

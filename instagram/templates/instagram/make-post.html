@@ -1,0 +1,27 @@
+{% extends './posts-display-base.html' %}
+{% if user.is_authenticated %}
+    <p>user</p>
+    {% block title %}
+        <title>Mini-Instagram | Create a post</title>
+    {% endblock %}
+
+    {% block content %}
+        <h1>Create a Post</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form  %}
+                <div class="field">
+                    {{ field.label_tag }} 
+                    <br><br> 
+                    {{ field }}
+                    <br><br> 
+                </div>
+            {% endfor %}
+            <button class="btn" type="submit">Post!</button>
+            <br><br>
+        </form>
+    {% endblock %}
+{% else %}
+    <meta http-equiv="REFRESH" content="0;url=./login">
+{% endif %}

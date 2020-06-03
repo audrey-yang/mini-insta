@@ -1,0 +1,144 @@
+/* GENERAL */
+
+html {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+}
+
+body {
+    margin: 8% 8%;
+    margin-top: 2%;
+}
+
+footer {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3rem;
+    font-style: italic;
+}
+
+h3 {
+    color: black;
+}
+
+/* LOGIN SCREEN */
+.container {
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    flex-wrap: wrap;   
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container img {
+    width: 75%;
+    height: auto;
+}
+
+.inner-container {
+    width: 90%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid gainsboro 1px;
+    padding: 2rem 2rem;
+    margin: 2rem;
+}
+
+/* FORMS */
+
+.btn {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1rem;
+    padding: 0.3rem 1.5rem;
+    background-color: plum;
+    color: white;
+    border: none;
+}
+
+input, #id_text {
+    background-color: whitesmoke;
+    border: solid silver 1px;
+    border-radius: 0.2rem;
+    font-family: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: table;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    float: left;
+    margin: 0.5rem 0.5rem;
+}
+
+.navbar.welcome li {
+    float: none;
+}
+
+.navbar li a {
+    color: gray;
+}
+
+.navbar li a:hover {
+    background-color: gainsboro;
+}
+
+/* POST DISPLAY */
+
+.instr {
+    font-weight: normal;
+}
+
+a h3:hover {
+    color: gray;
+}
+
+.posts {
+    padding: 0;
+    list-style: none;
+}
+
+.posts li a {
+    font-style: italic;
+    font-weight: bold;
+}
+
+.posts p {
+    color: gray;
+    font-size: 1rem;
+}
+
+.posts .date {
+    font-size:0.9rem;
+}
+
+/* LIKING */
+
+.like img {
+    width: 1rem; 
+    height: 0.9rem;
+    margin: 0 5px;
+}
+
