@@ -21,7 +21,7 @@ From [this Django tutorial](https://docs.djangoproject.com/en/3.0/intro/reusable
 4. Start the development server and visit http://127.0.0.1:8000/admin/ 
     (you'll need the Admin app enabled).
 
-5. Visit http://127.0.0.1:8000/polls/ to use the app.
+5. Visit http://127.0.0.1:8000/instagram/ to use the app.
 
 ## Known Bugs
 A user that is not logged in can still access the pages to post and view the user's posts by entering the url. However, this path will always lead to some error, so they can't actually use the app that way.
