@@ -1,0 +1,57 @@
+{% extends './posts-display-base.html' %}
+
+{% block title %}
+    <title>Mini-Instagram</title>
+{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if posts %}
+            <ul class="posts">
+            {% for post in posts %}
+                
+                <li>
+                    <div class="prof-pic">
+                        <img src="{{ post.image.url }}">
+                        <h3 class="handle">
+                            <a href="./profile/{{ post.author.id }}">{{ post.author }}</a>
+                        </h3>
+                    </div>
+                    
+                    <div class="img-container">
+                        <img src="{{ post.image.url }}">
+                    </div>
+                    <div class="caption-container">
+                        <p class="like" >
+                            <a href="./like/{{ post.id }}">
+                                {% load static %}
+                                {% if user.username in post.likedUsers %}
+                                    <img src="{% static 'instagram/images/filled-heart.png' %}"> 
+                                {% else %}
+                                    <img src="{% static 'instagram/images/heart.png' %}">
+                                {% endif %}
+                            </a>
+                            {% if post.numLikes == 1 %}
+                                {{ post.numLikes }} like
+                            {% else %}
+                                {{ post.numLikes }} likes
+                            {% endif %}
+                        </p>
+                        {% if post.text %}
+                            <h3 class="handle">
+                                <a href="./profile/{{ post.author.id }}">{{ post.author }}</a> {{ post.text }}
+                            </h3>
+                        {% endif %}
+                        
+                        <p class="date">{{ post.pub_date }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-posts">No posts are available.</p>
+    {% endif %}
+    {% else %} 
+        <meta http-equiv="REFRESH" content="0;url=./login">
+    {% endif %}
+{% endblock %}

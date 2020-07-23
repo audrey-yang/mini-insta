@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %}
+        {% endblock %}
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'instagram/style.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <a href="./" style="color:black;"><h2>Mini-Instagram</h2></a>
+            <ul class="navbar">
+                <li><a href="./make-post">Create a Post</a></li>
+                <li>•</li>
+                <li><a href="./my-posts">My Profile</a></li>
+                <li>•</li>
+                <li><a href="./logout">Logout</a></li>
+            </ul>
+        </header>
+        {% block content %}
+        {% endblock %}
+        <footer>
+            <hr>
+            <ul class="navbar">
+                <li><a href="./">Feed</a></li>
+                <li>•</li>
+                <li><a href="./make-post">Create a Post</a></li>
+                <li>•</li>
+                <li><a href="./my-posts">My Profile</a></li>
+                <li>•</li>
+                <li><a href="./logout">Logout</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

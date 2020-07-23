@@ -1,0 +1,17 @@
+{% extends './posts-display-base.html' %}
+
+{% block title %}
+    <title>Mini-Instagram | {{ profile }} </title>
+{% endblock %}
+
+
+{% block content %}
+    <div class="profile">
+        <h2>{{ profile }}</h2>
+        <img src="{{ profile.prof_pic.url }}">
+        <p>{{ profile.bio }}</p>
+    </div>    
+
+{% endblock %}
+
+
